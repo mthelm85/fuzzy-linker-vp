@@ -23,7 +23,7 @@ pub struct Match {
 }
 
 #[wasm_bindgen]
-pub fn search_matches(vec1: Vec<String>, vec2: Vec<String>, radius: usize) -> Result<JsValue, JsValue> {
+pub fn fuzzy_join(vec1: Vec<String>, vec2: Vec<String>, radius: usize) -> Result<JsValue, JsValue> {
     let mut matches = Vec::new();
 
     let tree = if vec1.len() > vec2.len() {

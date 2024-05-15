@@ -8,10 +8,10 @@ async function run() {
     const vec2 = ["barb", "ass"];
     const radius = 2;
 
-    const resultString = wasmModule.search_matches(vec1, vec2, radius);
-    const result = JSON.parse(resultString);
-
+    const result = wasmModule.fuzzy_join(vec1, vec2, radius);
+    console.log('Result:', result);
     const expectedResult = [{ id: 0, connected_nodes: [5,1] }, { id: 1, connected_nodes: [3,2,4] }];
+    console.log('Expected Result:', expectedResult);
     assert.deepStrictEqual(result, expectedResult, 'The result does not match the expected result');
 }
 
